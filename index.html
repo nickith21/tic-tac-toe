@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <title>Tik Tak Toe</title>
     <style>
+      .bordered {
+        border: 6px solid #0b0d0f;
+        border-radius: 10px;
+      }
+      .logos {
+        height: 5rem;
+      }
       .main-logo {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
+        height: 5rem;
       }
       button {
         background-color: #868f98;
@@ -56,7 +60,13 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <h1>Tik Tak Toe</h1>
+    <h1>
+      <img
+        class="main-logo"
+        src="./img/NFL Logos/nfl-league-logo-300x300.png"
+      />
+      Tik Tak Toe
+    </h1>
 
     <!-- We will put our React component inside this div. -->
     <div id="root"></div>

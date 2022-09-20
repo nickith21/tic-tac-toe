@@ -1,16 +1,8 @@
-const Square = ({ id, newState }) => {
+const Square = ({ id, newState, team1T, team2T }) => {
   const [status, setStatus] = React.useState(null);
   const [empty, setEmpty] = React.useState(true);
-  const teamImg = [
-    <img src="./img/NFL Logos/los-angeles-rams-2020-logo.png"></img>,
-    <img src="./img/NFL Logos/nfl-atlanta-falcons-team-logo-2-300x300-2.png"></img>,
-  ];
 
-  let palet = ["red", "blue", "green"];
-
-  const getRandomColor = () => {
-    return palet[Math.floor(Math.random() * 3)];
-  };
+  const teamImg = [<img src={team1T}></img>, <img src={team2T}></img>];
 
   return (
     <button
@@ -33,6 +25,18 @@ const Square = ({ id, newState }) => {
 
 const Board = () => {
   // initiate the player state to 1
+
+  const [team1Team, setTeam1Team] = React.useState("");
+  const [team2Team, setTeam2Team] = React.useState("");
+
+  const team1Main = (team) => {
+    setTeam1Team(team);
+  };
+
+  const team2Main = (team) => {
+    setTeam2Team(team);
+  };
+
   const [player, setPlayer] = React.useState(0);
   // initiate the state to [] to capture data returned from the child
   const [state, setState] = React.useState(Array(9).fill(null));
@@ -54,13 +58,21 @@ const Board = () => {
     return thePlayer;
   };
   const renderSquare = (i) => {
-    return <Square id={i} newState={newState}></Square>;
+    return (
+      <Square
+        id={i}
+        newState={newState}
+        team1T={team1Team}
+        team2T={team2Team}
+      ></Square>
+    );
   };
   const refreshPage = () => {
     window.location.reload();
   };
   return (
     <>
+      <NflTeams team1Main={team1Main} team2Main={team2Main} />
       <div id="info">
         <h1>{status}</h1>
       </div>
@@ -82,7 +94,6 @@ const Board = () => {
         </div>
       </div>
       <h1 onClick={refreshPage}>Restart</h1>
-      <TeamSelector />
     </>
   );
 };
