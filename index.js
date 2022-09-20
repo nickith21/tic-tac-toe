@@ -40,7 +40,7 @@ const Board = () => {
   const [player, setPlayer] = React.useState(0);
   // initiate the state to [] to capture data returned from the child
   const [state, setState] = React.useState(Array(9).fill(null));
-  let status = `Player ${player + 1}`;
+  let status = `Team ${player + 1}`;
   // const winner = checkWinner(state);
   // if (winner != null) `Player ${player} wins!`;
   // take in the data from the child and return the nextPlayer
