@@ -31,7 +31,7 @@ const NflTeams = ({ team1Main, team2Main }) => {
   team2Main(teamNum2);
 
   return (
-    <div>
+    <div className="nflTeams">
       <img
         className="logos"
         onClick={assignTeam}
