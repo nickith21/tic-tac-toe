@@ -14,12 +14,7 @@ const win = [
 ];
 
 const checkForWinner = (gameState, team1Team, team2Team) => {
-  if (gameState.length < 5)
-    return (
-      <>
-        <img className="winner" src={team1Team} />
-      </>
-    );
+  if (gameState.length < 5) return "";
 
   let p0 = gameState.filter((item) => {
     if (item.player == 0) return item;

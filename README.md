@@ -14,7 +14,7 @@ This project is a classic game of tic-tac-toe where the Xs and Os are replaced b
 
 # Roadmap of future improvements:
 
-- Have the user be able to choose their teams out of a group of 32 teams
+- Refactor the winner logic
 - Add sound to the selection process
 
 # License information:
